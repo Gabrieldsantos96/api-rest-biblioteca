@@ -26,6 +26,7 @@ rotas.get('/usuarios/:id',usuarios.obterUsuario);
 rotas.post('/usuarios',usuarios.cadastrarUsuario);
 rotas.put('./usuarios/:id',usuarios.atualizarUsuario);
 rotas.delete('usuarios/:id',usuarios.excluirUsuario);
+rotas.post('/login',usuarios.login);
 
 //emprestimos
 rotas.get('/emprestimos',emprestimos.listarEmprestimos);
