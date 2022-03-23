@@ -31,6 +31,10 @@ const obterLivro = async (req, res) => {
 const cadastrarLivro = async (req, res) => {
     const { autor_id, nome, genero, editora, data_publicacao } = req.body;
 
+    if (!autor_id || !nome || !genero || !editora || !data_publicacao) {
+        return res.status(400).json('Não foi possivel cadastrar o livro, pois faltam alguns argumentos')
+    }
+
     try {
         const query = `insert into livros (autor_id, nome, genero, editora, data_publicacao) 
         values ($1, $2, $3, $4, $5)`;
