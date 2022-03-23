@@ -22,7 +22,8 @@ const obterEmprestimo = async (req, res) => {
             left join usuarios u on e.usuario_id = u.id 
             left join livros l on e.livro_id = l.id 
             where id = $1
-        `;  // 21 - se possível juntar com a tabela usuarios SE o  empréstimos(usuario_id) for === usuarios(id)
+        `;
+          // 21 - se possível juntar com a tabela usuarios SE o  empréstimos(usuario_id) for === usuarios(id)
             //22 - se possível juntar com a tabela livros SE o empréstimos(livro_id) for === livros(id)
         const emprestimo = await conexao.query(query, [id]);
 
